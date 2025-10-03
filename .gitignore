@@ -1,0 +1,21 @@
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+
+# Environment variables
+.env
+
+# Temporary images / output
+#*.png
+#*.jpg
+#*.jpeg
+#*.svg
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
