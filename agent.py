@@ -5,15 +5,6 @@ from .converters import convert_svg_to_png, convert_svg_to_jpeg, upload_to_gcs
 from IPython.display import Image, Markdown, display
 import re
 
-# this design_agent takes user input as a TEXT, generates SVG image file, converts svg to png, jpeg, stores all three file in GCS bucket
-# uses model gemini-2.5-flash, 
-# gemini-2.5-flash-image-preview is not available
-# image quality is not that good
-
-# PROJECT_ID = "ai2396-intellimake-env4"
-#LOCATION = "global"
-#MODEL_ID = "gemini-2.5-flash"
-
 import os
 # Add credentials here or in the .env 
 PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT", "default-project")
@@ -53,12 +44,6 @@ def generate_image_to_svg(prompt: str) -> str:
     png_path = convert_svg_to_png(svg_path, "/tmp/generated.png")
     jpeg_path = convert_svg_to_jpeg(svg_path, "/tmp/generated.jpg")
 
-    # Display the generated PNG in IPython/Cloud Shell
-    #display(Image(filename=png_path, width=400, height=400))
-
-    # from PIL import Image
-    # img = Image.open("/tmp/generated.png")
-    # img.show()
 
     # Upload to GCS
     bucket_name = "noor-design-agent-2626"
