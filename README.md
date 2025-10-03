@@ -14,38 +14,43 @@ The agent generates SVG images from text prompts, converts them to PNG and JPEG,
 ```bash
 git clone https://github.com/jannat-noor/design_agent_svg.git
 cd design_agent_svg
-
+```
 2. **Install dependencies**
+```bash
 pip install -r requirements.txt
-
+```
 3. **Create .env file with your configuration:**
+```bash
 GOOGLE_CLOUD_PROJECT=your-project-id
 GOOGLE_CLOUD_LOCATION=global
 GOOGLE_CLOUD_STORAGE_BUCKET=your-bucket-name
-
+```
 4. **(Optional) Activate virtual environment**
+```bash
 source .venv/bin/activate
+```
+## Usage
 
-Usage
+- Run directly with Python
+- python agent.py
 
-Run directly with Python
-python agent.py
-
-Run using Docker
+## Run using Docker
+```bash
 docker build -t design-agent .
 docker run --env-file .env design-agent
+```
 
-Notes
+## Notes
 
-Model used: gemini-2.5-flash
-Currently generates basic SVG images; quality can be improved by generating PNG directly or using a different model.
+- Model used: gemini-2.5-flash
+- Currently generates basic SVG images; quality can be improved by generating PNG directly or using a different model.
 
-Files
-agent.py — Main agent code
-converters.py — SVG/PDF/PNG conversion and GCS upload
-requirements.txt — Python dependencies
-.env — Environment variables (not included in repo)
-Dockerfile — Container setup
+## Files
+- agent.py — Main agent code
+- converters.py — SVG/PDF/PNG conversion and GCS upload
+- requirements.txt — Python dependencies
+- .env — Environment variables (not included in repo)
+- Dockerfile — Container setup
 
 
 
