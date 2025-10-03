@@ -9,7 +9,8 @@ import os
 # Add credentials here or in the .env 
 PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT", "default-project")
 LOCATION = os.getenv("GOOGLE_CLOUD_LOCATION", "global")
-MODEL_ID = os.getenv("GOOGLE_CLOUD_STORAGE_BUCKET", "gemini-2.5-flash")
+BUCKET_NAME = os.getenv("GOOGLE_CLOUD_STORAGE_BUCKET")
+MODEL_ID = "gemini-2.5-flash"
 
 # Create Vertex AI client
 client = genai.Client(vertexai=True, project=PROJECT_ID, location=LOCATION)
